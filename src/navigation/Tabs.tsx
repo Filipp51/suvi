@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../screens/HomeScreen";
 import MapScreen from "../screens/MapScreen";
-import QuestsScreen from "../screens/QuestsScreen";
-import ShopScreen from "../screens/ShopScreen";
+import QuestsStack from "./QuestsStack";
+import ShopStack from "./ShopStack";
 import ProfileScreen from "../screens/ProfileScreen";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -32,14 +32,14 @@ const Tabs = () => {
 
             return <Ionicons name={iconName as any} size={size} color={color} />;
           },
-          tabBarActiveTintColor: "#007AFF", // Синий цвет активной вкладки
+          tabBarActiveTintColor: "#007AFF",
           tabBarInactiveTintColor: "gray",
         })}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Map" component={MapScreen} />
-        <Tab.Screen name="Quests" component={QuestsScreen} />
-        <Tab.Screen name="Shop" component={ShopScreen} />
+        <Tab.Screen name="Quests" component={QuestsStack} />
+        <Tab.Screen name="Shop" component={ShopStack} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
     </NavigationContainer>
@@ -47,3 +47,5 @@ const Tabs = () => {
 };
 
 export default Tabs;
+
+
